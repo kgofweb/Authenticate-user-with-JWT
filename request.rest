@@ -1,0 +1,27 @@
+# User auth
+GET http://localhost:8000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQnJhZCIsImlhdCI6MTYwMzkxMjMwNywiZXhwIjoxNjAzOTEyMzM3fQ.ATfWTv04TLpiiOlZZzw3AW9HJ_SFGh3s3qbCF2Pg970
+
+### Token refresh
+POST http://localhost:5000/token
+Content-Type: application/json
+
+{
+   "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQnJhZCIsImlhdCI6MTYwMzkwOTU0NX0.d4SbyO3zXDr8U7AkWKBHkMGHnSQZaOhLJ_qtAmNPy98"
+}
+
+### Send accesToken and refreshToken token
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+   "username": "Brad"
+}
+
+### logout
+DELETE http://localhost:5000/logout
+Content-Type: application/json
+
+{
+   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQnJhZCIsImlhdCI6MTYwMzkwOTU0NX0.d4SbyO3zXDr8U7AkWKBHkMGHnSQZaOhLJ_qtAmNPy98"
+}
